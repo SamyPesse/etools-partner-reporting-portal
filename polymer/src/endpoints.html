@@ -92,13 +92,17 @@
       responseParamtersClustersActivityDetail: function(activityId) {
         return this._buildUrl('/cluster/cluster-activity/' + activityId + '/');
       },
-      
+
       clusterIndicatorReports: function (responsePlanId) {
         return this._buildUrl('/cluster/' + responsePlanId + '/cluster-indicators-list/');
       },
 
       clusterIndicatorNames: function (responsePlanId) {
         return this._buildUrl('/cluster/' + responsePlanId + '/cluster-indicators-simple-list/');
+      },
+
+      clusterObjectivesRefNumbers: function (responsePlanId) {
+        return this._buildUrl('/cluster/' + responsePlanId + '/cluster-objectives-ref-simple-list/');
       },
 
       clusterNames: function (responsePlanId) {

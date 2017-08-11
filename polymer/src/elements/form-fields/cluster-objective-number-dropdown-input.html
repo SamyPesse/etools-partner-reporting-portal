@@ -1,0 +1,96 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="dropdown-form-input.html">
+<link rel="import" href="../etools-prp-ajax.html">
+<link rel="import" href="../../endpoints.html">
+<link rel="import" href="../../redux/store.html">
+
+<dom-module id="cluster-objective-ref-number-dropdown-input">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <etools-prp-ajax
+        id="refNumbers"
+        url="[[url]]">
+    </etools-prp-ajax>
+
+    <template is="dom-if" if="[[!loading]]">
+      <dropdown-form-input
+        label="CO Ref. #"
+        name="reference_number"
+        value="{{value}}"
+        display="reference_number"
+        data="[[data]]">
+      </dropdown-forn-input>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'cluster-objective-ref-number-dropdown-input',
+
+      behaviors: [
+        App.Behaviors.ReduxBehavior,
+      ],
+
+      properties: {
+        url: {
+          type: String,
+          computed: '_computeUrl(responsePlanID)',
+          observer: '_fetchObjectiveRefNumbers',
+        },
+
+        responsePlanID: {
+          type: String,
+          statePath: 'responsePlans.currentID',
+        },
+
+        loading: {
+          type: Boolean,
+          value: true,
+          computed: '_computeLoading(data)',
+        },
+
+        data: {
+          type: Array,
+          value: [],
+        },
+
+        value: {
+          type: Number,
+          notify: true
+        }
+      },
+
+      _computeUrl: function (responsePlanID) {
+        return App.Endpoints.clusterObjectivesRefNumbers(responsePlanID);
+      },
+
+      _computeLoading: function (data) {
+        return !data.length;
+      },
+
+      _fetchObjectiveRefNumbers: function () {
+        var self = this;
+
+        this.$.refNumbers.abort();
+
+        this.$.refNumbers.thunk()()
+          .then(function (res) {
+            self.set('data', res.data)
+          })
+          .catch(function (err) { // jshint ignore:line
+            // TODO: error handling
+          });
+      },
+
+      detached: function () {
+        this.$.clusterNames.abort();
+      },
+    });
+  </script>
+</dom-module>

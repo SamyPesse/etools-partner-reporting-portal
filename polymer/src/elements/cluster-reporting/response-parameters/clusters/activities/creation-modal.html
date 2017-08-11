@@ -14,6 +14,7 @@
 
 <link rel="import" href="../../../../form-fields/dropdown-form-input.html">
 <link rel="import" href="../../../../form-fields/cluster-dropdown-input.html">
+<link rel="import" href="../../../../form-fields/cluster-objective-number-dropdown-input.html">
 <link rel="import" href="../../../../etools-prp-ajax.html">
 <link rel="import" href="../../../../../styles/buttons.html">
 <link rel="import" href="../../../../../redux/store.html">
@@ -120,14 +121,12 @@
             value="{{data.cluster_objective}}">
           </cluster-dropdown-input>
 
-          <paper-input
+          <cluster-objective-ref-number-dropdown-input
             class="item"
             id="reference_number"
             label="CO ref #"
-            value="{{data.reference_number}}"
-            type="string"
-            required>
-          </paper-input>
+            value="{{data.reference_number}}">
+          </cluster-objective-ref-number-dropdown-input>
 
           <dropdown-form-input
              class="item"

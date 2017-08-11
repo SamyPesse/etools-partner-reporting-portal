@@ -31,7 +31,7 @@
             id="repeat"
             is="dom-repeat"
             items="[[data]]">
-          <paper-item>[[item.title]]</paper-item>
+          <paper-item>[[_displayName(item)]]</paper-item>
         </template>
       </paper-listbox>
     </paper-dropdown-menu>
@@ -47,6 +47,8 @@
           value: [],
         },
 
+        display: String,
+
         value: {
           notify: true
         },
@@ -57,6 +59,14 @@
       _getValue: function (e) {
         var newValue = this.$.repeat.itemForElement(e.detail.item).id;
         this.value = newValue;
+      },
+
+      _displayName: function (item) {
+        if (this.display) {
+          return item[this.display]
+        } else {
+          return item.title
+        }
       },
     });
   </script>
