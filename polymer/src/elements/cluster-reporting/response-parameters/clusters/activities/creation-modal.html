@@ -74,7 +74,7 @@
 
     <etools-prp-ajax
         id="createActivity"
-        url="[[activityUrl]]"
+        url="[[url]]"
         body="[[data]]"
         content-type="application/json"
         method="post">
@@ -166,6 +166,10 @@
       ],
 
       properties: {
+        responsePlanID: {
+          type: String,
+          statePath: 'responsePlans.currentID',
+        },
 
         opened: {
           type: Boolean,
@@ -186,10 +190,14 @@
           ],
         },
 
-        activityUrl: {
+        url: {
           type: String,
-          value: App.Endpoints.responseParametersClusterActivities()
+          computed: '_computeUrl(responsePlanID)'
         },
+      },
+
+      _computeUrl: function(responsePlanID) {
+        return App.Endpoints.responseParametersClusterObjectives(responsePlanID);
       },
 
       close: function () {
