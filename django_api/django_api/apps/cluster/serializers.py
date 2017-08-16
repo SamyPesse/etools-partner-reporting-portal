@@ -15,6 +15,16 @@ class ClusterSimpleSerializer(serializers.ModelSerializer):
         )
 
 
+class ClusterObjectiveSimpleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cluster
+        fields = (
+            'id',
+            'reference_number',
+        )
+
+
 class ClusterObjectiveSerializer(serializers.ModelSerializer):
 
     frequency = serializers.ChoiceField(choices=FREQUENCY_LEVEL)

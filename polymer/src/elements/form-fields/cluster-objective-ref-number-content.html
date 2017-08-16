@@ -5,33 +5,17 @@
 <link rel="import" href="../../endpoints.html">
 <link rel="import" href="../../redux/store.html">
 
-<dom-module id="cluster-objective-ref-number-dropdown-input">
+<dom-module id="cluster-objective-ref-number-content">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-
     <etools-prp-ajax
         id="refNumbers"
         url="[[url]]">
     </etools-prp-ajax>
-
-    <template is="dom-if" if="[[!loading]]">
-      <dropdown-form-input
-        label="CO Ref. #"
-        name="reference_number"
-        value="{{value}}"
-        display="reference_number"
-        data="[[data]]">
-      </dropdown-forn-input>
-    </template>
   </template>
 
   <script>
     Polymer({
-      is: 'cluster-objective-ref-number-dropdown-input',
+      is: 'cluster-objective-ref-number-content',
 
       behaviors: [
         App.Behaviors.ReduxBehavior,
@@ -49,29 +33,14 @@
           statePath: 'responsePlans.currentID',
         },
 
-        loading: {
-          type: Boolean,
-          value: true,
-          computed: '_computeLoading(data)',
-        },
-
-        data: {
+        numbers: {
           type: Array,
           value: [],
         },
-
-        value: {
-          type: Number,
-          notify: true
-        }
       },
 
       _computeUrl: function (responsePlanID) {
         return App.Endpoints.clusterObjectivesRefNumbers(responsePlanID);
-      },
-
-      _computeLoading: function (data) {
-        return !data.length;
       },
 
       _fetchObjectiveRefNumbers: function () {
@@ -81,7 +50,7 @@
 
         this.$.refNumbers.thunk()()
           .then(function (res) {
-            self.set('data', res.data)
+            self.set('numbers', res.data)
           })
           .catch(function (err) { // jshint ignore:line
             // TODO: error handling

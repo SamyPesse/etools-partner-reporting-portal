@@ -21,6 +21,7 @@ from .serializers import (
     ClusterObjectivePatchSerializer,
     ClusterActivitySerializer,
     ClusterActivityPatchSerializer,
+    ClusterObjectiveSimpleSerializer
 )
 from .filters import (
     ClusterObjectiveFilter,
@@ -43,7 +44,6 @@ class ClusterListAPIView(ListAPIView):
         if response_plan_id:
             return queryset.filter(response_plan_id=response_plan_id)
         return queryset.all()
-
 
 class ClusterObjectiveAPIView(APIView):
     """
@@ -103,6 +103,11 @@ class ClusterObjectiveAPIView(APIView):
         instance = self.get_instance(request)
         instance.delete()
         return Response(status=statuses.HTTP_204_NO_CONTENT)
+
+
+class ClusterObjectiveSimpleListAPIView(ClusterObjectiveAPIView):
+    serializer_class = ClusterObjectiveSimpleSerializer
+    pagination_class = filter_class = None
 
 
 class ClusterObjectiveListCreateAPIView(ListCreateAPIView):

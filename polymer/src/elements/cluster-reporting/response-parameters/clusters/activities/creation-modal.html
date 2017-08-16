@@ -14,7 +14,7 @@
 
 <link rel="import" href="../../../../form-fields/dropdown-form-input.html">
 <link rel="import" href="../../../../form-fields/cluster-dropdown-input.html">
-<link rel="import" href="../../../../form-fields/cluster-objective-number-dropdown-input.html">
+<link rel="import" href="../../../../form-fields/cluster-objective-ref-number-content.html">
 <link rel="import" href="../../../../etools-prp-ajax.html">
 <link rel="import" href="../../../../../styles/buttons.html">
 <link rel="import" href="../../../../../redux/store.html">
@@ -71,6 +71,10 @@
     </style>
 
     <iron-location path="{{path}}"></iron-location>
+
+    <cluster-objective-ref-number-content
+      numbers={{numbers}}>
+    </cluster-objective-ref-number-content>
 
     <etools-prp-ajax
         id="createActivity"
