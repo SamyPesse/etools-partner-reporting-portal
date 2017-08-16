@@ -7,10 +7,12 @@
 
 <dom-module id="cluster-objective-ref-number-content">
   <template>
+
     <etools-prp-ajax
         id="refNumbers"
         url="[[url]]">
     </etools-prp-ajax>
+
   </template>
 
   <script>
@@ -36,6 +38,7 @@
         numbers: {
           type: Array,
           value: [],
+          notify: true
         },
       },
 
@@ -58,7 +61,7 @@
       },
 
       detached: function () {
-        this.$.clusterNames.abort();
+        this.$.refNumbers.abort();
       },
     });
   </script>

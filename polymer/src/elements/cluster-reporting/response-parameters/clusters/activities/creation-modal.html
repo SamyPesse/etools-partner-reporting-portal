@@ -13,13 +13,14 @@
 <link rel="import" href="../../../../../../bower_components/paper-dialog/paper-dialog.html">
 
 <link rel="import" href="../../../../form-fields/dropdown-form-input.html">
-<link rel="import" href="../../../../form-fields/cluster-dropdown-input.html">
 <link rel="import" href="../../../../form-fields/cluster-objective-ref-number-content.html">
+<link rel="import" href="../../../../form-fields/cluster-dropdown-content.html">
 <link rel="import" href="../../../../etools-prp-ajax.html">
 <link rel="import" href="../../../../../styles/buttons.html">
 <link rel="import" href="../../../../../redux/store.html">
 <link rel="import" href="../../../../../redux/actions.html">
 <link rel="import" href="../../../../../behaviors/date.html">
+<link rel="import" href="../../../../../behaviors/utils.html">
 
 <dom-module id="cluster-activities-modal">
   <template>
@@ -72,8 +73,12 @@
 
     <iron-location path="{{path}}"></iron-location>
 
+    <cluster-dropdown-content
+      clusters="{{clusters}}">
+    </cluster-dropdown-content>
+
     <cluster-objective-ref-number-content
-      numbers={{numbers}}>
+      numbers="{{numbers}}">
     </cluster-objective-ref-number-content>
 
     <etools-prp-ajax
@@ -101,7 +106,7 @@
       <paper-dialog-scrollable>
         <iron-form class="app-grid">
           <paper-input
-            class="item full-width"
+            class="item validate full-width"
             id="title"
             label="Title"
             value="{{data.title}}"
@@ -110,7 +115,7 @@
           </paper-input>
 
           <paper-input
-            class="item full-width"
+            class="item validate full-width"
             id="standard"
             label="Standard"
             value="{{data.standard}}"
@@ -118,28 +123,63 @@
             required>
           </paper-input>
 
-          <cluster-dropdown-input
-            class="item"
-            label="Cluster"
-            id="cluster"
-            value="{{data.cluster_objective}}">
-          </cluster-dropdown-input>
+          <paper-dropdown-menu
+              class="item validate"
+              label="Cluster"
+              id="cluster"
+              on-value-changed="_validate"
+              on-selected-item-changed="_setCluster"
+              always-float-label
+              required>
+              <paper-listbox
+                  slot="dropdown-content"
+                  class="dropdown-content">
+                <template
+                    id="clusters"
+                    is="dom-repeat"
+                    items="[[clusters]]">
+                  <paper-item>[[item.title]]</paper-item>
+                </template>
+              </paper-listbox>
+          </paper-dropdown-menu>
 
-          <cluster-objective-ref-number-dropdown-input
-            class="item"
-            id="reference_number"
-            label="CO ref #"
-            value="{{data.reference_number}}">
-          </cluster-objective-ref-number-dropdown-input>
+          <paper-dropdown-menu
+              class="item validate"
+              label="CO ref #"
+              on-value-changed="_validate"
+              on-selected-item-changed="_setRefNumber"
+              always-float-label
+              required>
+            <paper-listbox
+                slot="dropdown-content"
+                class="dropdown-content">
+              <template
+                  id="frequencies"
+                  is="dom-repeat"
+                  items="[[numbers]]">
+                <paper-item>[[item.reference_numbers]]</paper-item>
+              </template>
+            </paper-listbox>
+          </paper-dropdown-menu>
 
-          <dropdown-form-input
-             class="item"
-             label="Frequency of reporting"
-             id="frequency"
-             value="{{data.frequency}}"
-             data="[[frequencies]]">
-          </dropdown-form-input>
-
+          <paper-dropdown-menu
+              class="item validate"
+              label="Frequency of reporting"
+              on-value-changed="_validate"
+              on-selected-item-changed="_setFrequency"
+              always-float-label
+              required>
+            <paper-listbox
+                slot="dropdown-content"
+                class="dropdown-content">
+              <template
+                  id="frequencies"
+                  is="dom-repeat"
+                  items="[[frequencies]]">
+                <paper-item>[[item.title]]</paper-item>
+              </template>
+            </paper-listbox>
+          </paper-dropdown-menu>
         </iron-form>
 
       </paper-dialog-scrollable>
@@ -167,6 +207,7 @@
         App.Behaviors.DateBehavior,
         App.Behaviors.ReduxBehavior,
         App.Behaviors.RoutingBehavior,
+        App.Behaviors.UtilsBehavior,
       ],
 
       properties: {
@@ -198,6 +239,16 @@
           type: String,
           computed: '_computeUrl(responsePlanID)'
         },
+
+        clusters: {
+          type: Array,
+          value: []
+        },
+
+        numbers: {
+          type: Array,
+          value: []
+        }
       },
 
       _computeUrl: function(responsePlanID) {
@@ -213,6 +264,37 @@
         this.set('opened', true);
       },
 
+      _validate: function (e) {
+        e.target.validate();
+      },
+
+      _setFrequency: function (e, data) {
+        var freq = this.$$('#frequencies').itemForElement(data.value);
+        if (!freq) {
+          return;
+        }
+
+        this.set('data.frequency', freq.id);
+      },
+
+      _setCluster: function (e, data) {
+        var cluster = this.$$('#clusters').itemForElement(data.value);
+
+        if (!cluster) {
+          return;
+        }
+        this.set('data.cluster', cluster.id);
+      },
+
+      _setRefNumber: function (e, data) {
+        var number = this.$$('#numbers').itemForElement(data.value);
+
+        if (!number) {
+          return;
+        }
+        this.set('data.reference_number', number.id);
+      },
+
       _redirectToDetail: function (id) {
         var path = '/response-parameters/clusters/activity/' + String(id);
         var url = this.buildUrl(this._baseUrlCluster, path);
@@ -222,6 +304,11 @@
       _save: function () {
         var self = this;
         var thunk = this.$.createActivity.thunk();
+
+        if (!this._fieldsAreValid()) {
+          return;
+        }
+
         self.updatePending = true;
         thunk()
           .then(function (res) {
