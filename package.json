@@ -1,0 +1,24 @@
+{
+  "name": "etools-partner-reporting-portal",
+  "version": "1.0.0",
+  "description": "## Container build status * Polymer: [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=unicef&repoName=etools-partner-reporting-portal&branch=develop&pipelineName=polymer&accountName=unicef&type=cf-1)]( https://g.codefresh.io/repositories/unicef/etools-partner-reporting-portal/builds?filter=trigger:build;branch:develop;service:58d57dc1d28e8f0100907a76~polymer)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unicef/etools-partner-reporting-portal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unicef/etools-partner-reporting-portal/issues"
+  },
+  "homepage": "https://github.com/unicef/etools-partner-reporting-portal#readme"
+}
