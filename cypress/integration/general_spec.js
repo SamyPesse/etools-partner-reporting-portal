@@ -1,29 +1,18 @@
 describe('General Actions', function() {
 
-  Cypress.Commands.add('login', (csrfToken) => {
-    cy.request({
-        method: 'POST',
-        url: '/api/admin/login/?next=/api/admin/',
-        failOnStatusCode: false, // dont fail so we can make assertions
-        form: true, // we are submitting a regular form body
-        body: {
-          username: 'admin_ao',
-          password: 'Passw0rd!',
-          csrfmiddlewaretoken: csrfToken // insert this as part of form body
-        }
-      })
-  })
-
   describe('Login to django admin with UI', function() {
+
+    after(function() {
+      cy.visit('/api/admin/logout/').get('body').contains('Logged out')
+    })
+
     it('it logs in the user to django admin', function() {
       cy.visit('/api/admin')
       cy.get('input[name=username]').type('admin_ao')
       cy.get('input[name=password]').type('Passw0rd!{enter}')
       cy.get('#user-tools').contains('admin_ao')
     })
-    after(function() {
-      cy.visit('/api/admin/logout/').get('body').contains('Logged out')
-    })
+    
   })
 
   describe('Logging In to django admin without UI', function(){
@@ -37,10 +26,6 @@ describe('General Actions', function() {
     })
 
     it('parses token from HTML and logins successfully', function(){
-      // if we cannot change our server code to make it easier
-      // to parse out the CSRF token, we can simply use cy.request
-      // to fetch the login page, and then parse the HTML contents
-      // to find the CSRF token embedded in the page
       cy.request('/api/admin/login/')
         .its('body')
         .then((body) => {
@@ -48,35 +33,19 @@ describe('General Actions', function() {
           // thus enabling us to query into it easily
           const $html = Cypress.$(body)
           const csrf  = $html.find("input[name=csrfmiddlewaretoken]").val()
-
           cy.login(csrf)
             .then((resp) => {
               expect(resp.status).to.eq(200)
             })
         })
     })
-
   })
 
   describe('Create different type of users', function() {
+    
     beforeEach(function() {
-      cy.request('/api/admin/login/')
-        .its('body')
-        .then((body) => {
-          // we can use Cypress.$ to parse the string body
-          // thus enabling us to query into it easily
-          const $html = Cypress.$(body)
-          const csrf  = $html.find("input[name=csrfmiddlewaretoken]").val()
-
-          cy.login(csrf)
-            .then((resp) => {
-              expect(resp.status).to.eq(200)
-            })
-        })
+      cy.login()
       cy.visit('/api/admin')
-    })
-    after(function() {
-      cy.visit('/api/admin/logout/').get('body').contains('Logged out')
     })
 
     describe('successfully creates various users', function() {
@@ -205,7 +174,6 @@ describe('General Actions', function() {
       })
 
     })
-
 
   })
 })
