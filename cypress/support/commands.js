@@ -51,6 +51,9 @@ Cypress.Commands.add('login', function(token=null) {
       })
         
     })
- 
-
   })
+
+Cypress.Commands.add('delete', function(url) {
+  cy.visit(url)
+  cy.get("input[type=submit]").click()
+})
