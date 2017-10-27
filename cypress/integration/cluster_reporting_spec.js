@@ -128,6 +128,7 @@ describe("Cluster reporting", function() {
     })
 
     it('lets newly created user to login, select response plan, see dashboard', function() {
+      //ideally all cy.visit here should be replaced with click()
 
       //this needs to be moved to a separate describe block and actually login as new user
       cy.visit('/app/BE/cluster-reporting/select-plan', {timeout: 8000})
@@ -143,7 +144,58 @@ describe("Cluster reporting", function() {
       //   .then((res) => {Cypress.$(res).click()})
       
       cy.visit('/app/BE/cluster-reporting/plan/3/')
-      cy.wait(6000)
+      cy.wait(5000)
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-dashboard', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('Partner Dashboard')
+        })
+      cy.visit('/app/BE/cluster-reporting/plan/3/response-parameters/')
+      cy.url().should('contain', 'clusters/objectives')
+      cy.wait(5000)
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-response-parameters', 'clusters-response-parameters', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('Clusters')
+        })
+      cy.visit('/app/BE/cluster-reporting/plan/3/response-parameters/partners')
+      cy.wait(7000)
+      cy.url().should('contain', 'partners/projects')
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-response-parameters', 'partners-response-parameters', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('Partners')
+        })
+      cy.visit('/app/BE/cluster-reporting/plan/3/planned-action/')
+      cy.wait(5000)
+      cy.url().should('contain', 'planned-action/projects')
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-planned-action', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('My Planned Action')
+        })
+      cy.visit('/app/BE/cluster-reporting/plan/3/results')
+      cy.wait(5000)
+      cy.url().should('contain', 'results/draft')
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-results', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('Results')
+        })
+      cy.visit('/app/BE/cluster-reporting/plan/3/analysis')
+      cy.wait(5000)
+      cy.url().should('contain', 'analysis')
+      cy.get('app-shell').shadowDomElement(['page-app', 'page-cluster-reporting', 'page-cluster-reporting-router', 'page-cluster-reporting-analysis', 'page-header', 'h1'])
+        .then((res) => {
+          expect(Cypress.$(res).text()).to.contain('Analysis')
+        })
       })
   })
+
+
+
+
+
+
+
+
+
+
+
+
 })

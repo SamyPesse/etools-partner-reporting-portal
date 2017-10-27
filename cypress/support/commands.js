@@ -62,6 +62,7 @@ Cypress.Commands.add("shadowDomElement", {prevSubject: true}, function(subject, 
 
       var currentElement = subject[0];
       for (var i = 0; i < selectors.length; i++) {
+        console.log(currentElement)
         currentElement = currentElement.shadowRoot;
         currentElement = currentElement.querySelector(selectors[i]);
 
