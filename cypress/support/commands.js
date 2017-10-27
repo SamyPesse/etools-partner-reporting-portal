@@ -57,3 +57,20 @@ Cypress.Commands.add('delete', function(url) {
   cy.visit(url)
   cy.get("input[type=submit]").click()
 })
+
+Cypress.Commands.add("shadowDomElement", {prevSubject: true}, function(subject, selectors) {
+
+      var currentElement = subject[0];
+      for (var i = 0; i < selectors.length; i++) {
+        currentElement = currentElement.shadowRoot;
+        currentElement = currentElement.querySelector(selectors[i]);
+
+        if (!currentElement) {
+          break;
+        }
+      }
+
+      return currentElement;
+    
+});
+
