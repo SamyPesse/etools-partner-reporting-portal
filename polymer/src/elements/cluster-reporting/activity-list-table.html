@@ -206,6 +206,7 @@
           activities: {
             type: Object,
             statePath: 'partnerActivities.all',
+            observer: '_tableContentChanged',
           },
 
           loading: {
@@ -232,11 +233,6 @@
             type: Array,
             value: []
           }
-        },
-
-        _sortableFieldNames: {
-          type: Array,
-          value: ['title', 'partner', 'status', 'cluster_activity']
         },
 
         _openModal: function () {
