@@ -34,6 +34,22 @@ def up(quick=False):
     local(command)
 
 
+def up_with_bundle(quick=True):
+    """
+    Create and start containers with polymer bundle served.
+    """
+    local('docker-compose -f docker-compose.polymer-bundle.yml up %s' % '' if quick else '--build')
+
+
+def restart(service):
+    """
+    restart a service container
+    :param service: ['django_api', 'polymer', 'proxy', 'db']
+    """
+    assert service in ['django_api', 'polymer', 'proxy', 'db'], "%s is unrecognized service"
+    local('docker-compose restart %s' % service)
+
+
 def down():
     """
     Stop all containers.
