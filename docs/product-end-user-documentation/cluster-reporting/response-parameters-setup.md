@@ -22,7 +22,7 @@ This represents a place where any signed in user can view all partner projects a
 
 ### Adding a Project for a Partner as an IMO
 
-IMO can add a project for partners within their cluster from the response parameter section.
+IMO can add a project for partners \(within their cluster?\) from the response parameter section.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.13.34-pm.png)
 
@@ -42,11 +42,9 @@ The IMO can add activities for partners \(within their cluster\) as well.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.20.37-pm.png)
 
-They can select the partner and then choose to add from Cluster Activities 
+They can select the partner and then choose to add from Cluster Activities or a Custom activity. This flow / screens / fields etc. \(other than the partner dropdown\) are exactly the same as what the partner would do. Please see [here](planning-your-action-as-a-partner.md) for more details.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.22.44-pm.png)
-
-
 
 IMO can edit project afterwards as well.
 
