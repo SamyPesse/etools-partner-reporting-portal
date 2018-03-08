@@ -4,15 +4,17 @@ description: 'Partners plan their action: projects & activities'
 
 # Planning your action as a Partner
 
-In this section \("My Planned Action" in the left hand navigation\) of the interface is where the partner can view and setup their planned actions to support the work of the cluster. This section is only visible to a partner user who is logged in. A checkmark will indicate whether a project is from OCHA. The IMO does not see this section.
+In this section \("My Planned Action" in the left hand navigation\) of the interface is where the partner can view and setup their planned actions to support the work of the cluster. A checkmark will indicate whether a project is from OCHA. The IMO does not see this section.
+
+{% hint style="info" %}
+This section is only visible to a partner user who is logged in.
+{% endhint %}
 
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-1.45.49-pm.png)
 
 
 
 Partners can add custom Projects here or pull from OCHA. 
-
-
 
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-1.55.38-pm.png)
 
@@ -38,7 +40,20 @@ Custom Project will need to have
 
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-2.21.38-pm.png)
 
+Optional fields include
 
+* Name Of Agency \(dropdown of acronyms\)
+* Type of Agency \(dropdown\)
+* Additional implementing partners
+* Project part of HP or FA \(radio button\)
+* Prioritization classification \(dropdown\)
+* Project code in HRP \(dropdown\)
+* Funding Requirements \(in US$\)
+* Funding received/confirmed from CERF \(US$\)
+* Funding received / confirmed from bilateral agreements, not including UNICEF/WFP \(US$\)
+* Funding received / confirmed from UNICEF including supplies cost  \(US$\)
+* Funding received / confirmed from WFP including supplies cost  \(US$\)
+* Funding gap \(US$\)
 
 The project details can be editable.
 
@@ -51,10 +66,6 @@ The project details can be editable.
 ### Project Activities
 
 Under activities the partner can add activities they are conducting. They can choose to adopt a cluster activity or create a custom activity of their own.
-
-![](blob:https://unicef.gitbook.io/bd1a112d-b049-4f5b-9249-ac58a1f95c8a)
-
-
 
 If the Partner selects from a Cluster Activity, we will to show
 

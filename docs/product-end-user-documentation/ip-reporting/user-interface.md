@@ -56,3 +56,5 @@ Clicking on details of each indicator will show the latest and previous to lates
 
 
 
+
+

@@ -7,13 +7,17 @@ The users on PRP Cluster Reporting can login via:
 * Their email \(get a unique link clicking which they can login\) - TODO: will be deprecated.
 * Active Directory \(AD\) - will further integrate with HID \(Humanitarian ID\) or other oauth ID provider.
 
+PRP will integrate with AD for identity of the users. Roles will continue to be defined in the application itself via Django admin. See [AD Integration](../../technical-documentation/ad-integration.md) for more details.
+
+### User Role Management \(Django Admin\)
+
 What role they have on PRP or which partner they belong to is all managed in the Django Administrative interface.
 
 ![](../../.gitbook/assets/change_user___prp%20%281%29.png)
 
 **TBD**: user authentication impacts all of PRP, move to another section?
 
-&lt;**TBD need more info from Rob&gt;**
+
 
 ### Roles and Permissions
 

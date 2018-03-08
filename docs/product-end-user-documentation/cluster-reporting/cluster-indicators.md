@@ -25,11 +25,3 @@ When looking at an indicator, the user can click on the 'i' for helper text.
 
 
 
-![](../../.gitbook/assets/screen-shot-2018-03-08-at-12.15.35-pm.png)
-
-Users can see examples across Locations and Reporting periods
-
-![](../../.gitbook/assets/screen-shot-2018-03-08-at-12.15.52-pm.png)
-
-![](../../.gitbook/assets/screen-shot-2018-03-08-at-12.16.04-pm.png)
-

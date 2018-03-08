@@ -23,8 +23,6 @@
   * [Various data exports](product-end-user-documentation/ip-reporting/various-data-exports.md)
 * Cluster Reporting
   * [Overview](product-end-user-documentation/cluster-reporting/overview.md)
-  * [OCHA Integration](product-end-user-documentation/cluster-reporting/ocha-integration.md)
-  * [OCHA Integration - technical specification](product-end-user-documentation/cluster-reporting/ocha-integration-technical-specification.md)
   * [User Authentication, Roles and permissions](product-end-user-documentation/cluster-reporting/roles-and-permissions.md)
   * [Response Plans](product-end-user-documentation/cluster-reporting/untitled.md)
   * [Cluster Indicators](product-end-user-documentation/cluster-reporting/cluster-indicators.md)
@@ -33,6 +31,8 @@
   * [Planning your action as a Partner](product-end-user-documentation/cluster-reporting/planning-your-action-as-a-partner.md)
   * [Reporting on results](product-end-user-documentation/cluster-reporting/reporting-on-results.md)
   * [Analysis of results](product-end-user-documentation/cluster-reporting/analysis-of-results.md)
+  * [OCHA Integration](product-end-user-documentation/cluster-reporting/ocha-integration/README.md)
+    * [OCHA Integration - technical specification](product-end-user-documentation/cluster-reporting/ocha-integration/ocha-integration-technical-specification.md)
 
 ## Technical Documentation
 
@@ -42,4 +42,5 @@
 * [Data Model](technical-documentation/data-model.md)
 * [API Documentation](technical-documentation/api-documentation.md)
 * [CartoDB location sync](technical-documentation/cartodb-location-sync.md)
+* [AD Integration](technical-documentation/ad-integration.md)
 

@@ -26,50 +26,19 @@ IMO can add a project for partners \(within their cluster?\) from the response p
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.13.34-pm.png)
 
-IMO chooses the partner and if the project is existing to be pulled from OCHA or a new custom project.
+IMO chooses the partner and if the project is existing to be pulled from OCHA or a new custom project. Please see [OCHA integration](ocha-integration/README.md) for more details.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.13.18-pm.png)
 
-If the IMO pulls a project from OCHA, they will be able to choose from a list of projects pertaining to that partner and see details for that project.
+If the IMO pulls a project from OCHA, they will be able to choose from a list of projects pertaining to that partner and see details for that project. This flow / screens / fields etc. \(other than the partner dropdown\) are exactly the same as what the partner would do. Please see [here](planning-your-action-as-a-partner.md) for more details.
 
-![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.11.50-pm.png)
-
-If the IMO chooses a custom project, they will enter mandatory details such as
-
-* Title
-* Clusters \(dropdown\)
-* Start Date/End Date
-* Status \(dropdown\)
-* Description
-* Additional Information 
-* And options for see more
-
-![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.11.39-pm.png)
-
-Optional fields include
-
-* Name Of Agency \(dropdown of acronyms\)
-* Type of Agency \(dropdown\)
-* Additional implementing partners
-* Project part of HP or FA \(radio button\)
-* Prioritization classification \(dropdown\)
-* Project code in HRP \(dropdown\)
-* Funding Requirements \(in US$\)
-* Funding received/confirmed from CERF \(US$\)
-* Funding received / confirmed from bilateral agreements, not including UNICEF/WFP \(US$\)
-* Funding received / confirmed from UNICEF including supplies cost  \(US$\)
-* Funding received / confirmed from WFP including supplies cost  \(US$\)
-* Funding gap \(US$\)
-
-![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.11.08-pm.png)
-
-IMO can edit project afterwards and hide details
+IMO can edit project afterwards as well.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.10.02-pm.png)
 
 ### Adding an Activity for a Partner as an IMO
 
-IMO can add activities for partners \(within their cluster\).
+The IMO can add activities for partners \(within their cluster\) as well.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.20.37-pm.png)
 
@@ -77,36 +46,9 @@ They can select the partner and then choose to add from Cluster Activities
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.22.44-pm.png)
 
-If the IMO selects from a Cluster Activity, we will \(**TBD attempt\) **to show
-
-* Cluster \(dropdown\)
-* Activity \(dropdown\)
-* Partner Project \(dropdown\)
-* Start/End date 
-* Status \(dropdown\)
-
-**\(TBD does it make sense to show dropdowns?\)**
-
-![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.24.43-pm.png)
-
-For Custom Activity, IMO will include:
-
-* Cluster \(dropdown\)
-* Activity \(dropdown\)
-* Partner Project \(dropdown\)
-* Start/End date 
-* Status \(dropdown\)
-* **Location? \(TBD\)**
-
-![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.28.59-pm.png)
-
-IMO can edit project afterwards and hide details
-
-**&lt;TBD insert photo&gt;**
 
 
-
-
+IMO can edit project afterwards as well.
 
  
 
