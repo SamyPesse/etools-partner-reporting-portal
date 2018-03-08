@@ -22,7 +22,7 @@ This represents a place where any signed in user can view all partner projects a
 
 ### Adding a Project for a Partner as an IMO
 
-IMO can add a project for partners \(within their cluster?\) from the response parameter section.
+IMO can add a project for partners within their cluster from the response parameter section.
 
 ![](../../.gitbook/assets/screen-shot-2018-03-06-at-12.13.34-pm.png)
 
