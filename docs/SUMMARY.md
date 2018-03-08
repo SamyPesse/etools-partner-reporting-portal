@@ -20,6 +20,7 @@
   * [User Interface](product-end-user-documentation/ip-reporting/user-interface.md)
   * [Setting calculation methods for indicators](product-end-user-documentation/ip-reporting/setting-calculation-methods-for-indicators.md)
   * [Progress Reports](product-end-user-documentation/ip-reporting/progress-reports.md)
+  * [Various data exports](product-end-user-documentation/ip-reporting/various-data-exports.md)
 * Cluster Reporting
   * [Overview](product-end-user-documentation/cluster-reporting/overview.md)
   * [OCHA Integration](product-end-user-documentation/cluster-reporting/ocha-integration.md)
