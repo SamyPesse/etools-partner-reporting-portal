@@ -20,7 +20,9 @@ Partners can add custom Projects here or pull from OCHA.
 
 We will show basic details in a drop down so the partner knows which project they are pulling from OCHA. 
 
-&lt;\( **TBD** **Details need to be confirmed by Maciej\)&gt;**
+\( **TBD Maciej: After selecting a project from OCHA, we may need to allow partner to select/edit the clusters because the names incoming from OCHA are not standard.**
+
+**TBD Status and Additional information. We might not include Funding Source because there might be multiple. Total funding is not always available so it will be optional. \)**
 
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-1.56.58-pm.png)
 
@@ -31,7 +33,7 @@ Custom Project will need to have
 * Start Date/End Date
 * Status \(dropdown\)
 * Description
-* &lt;**TBD Need to add:** _**Add Additional Information Field&gt;**_
+* &lt;**TBD design need to add:** _**Add Additional Information Field&gt;**_
 * And options for see more
 
 **&lt; TBD update image to include add additional field information&gt;**
@@ -86,7 +88,6 @@ For Custom Activity, Partner will include
 * Partner Project \(dropdown\)
 * Start/End date
 * Status \(dropdown\)
-* _**&lt;Location? \(TBD\)&gt;**_
 
 ![](../../.gitbook/assets/screen-shot-2018-03-07-at-4.48.29-pm.png)
 
