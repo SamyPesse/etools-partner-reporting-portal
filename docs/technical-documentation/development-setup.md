@@ -7,7 +7,7 @@ description: Steps for a developer to setup their local development environment 
 ## Local Setup
 
 1. Install [Docker](https://docs.docker.com/engine/installation/) for your OS. Also install Fabric via `pip install fabric`
-2. Create .env file in`django_api `with the reference of`.env.example `or receive .env file from your team member.
+2. Create .env file with the reference of`.env.example `or receive .env file from your team member.
 3. Run`fab up`
 4. Go to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to see the frontend / polymer running. The Django app is running under
 
