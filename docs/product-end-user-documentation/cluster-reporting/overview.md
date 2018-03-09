@@ -10,15 +10,15 @@ Both IMO’s and Partners have access to Cluster Reporting and can view all data
 
 Partners can add
 
-* Custom Project or Import fro OCHA
-* Custom Activities or Import fro OCHA
+* Custom Project or Import from OCHA
+* Custom Activities 
 * Report on Project and Activity Indicators for their organization
 * Disaggregations
 
 IMOs can add
 
-* Custom Project or Import fro OCHA on behalf of partners
-* Custom Activities or Import fro OCHA on behalf of partners
+* Custom Project or Import from OCHA on behalf of partners
+* Custom Activities 
 * Report on all Indicators for their cluster
 * Disaggregations
 
