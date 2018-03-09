@@ -24,7 +24,7 @@ What role they have on PRP or which partner they belong to is all managed in the
   
 The below table represents the **4 roles** that PRP Cluster Reporting supports and the capabilities / available actions enabled for each:
 
-![](../../.gitbook/assets/screen-shot-2018-02-13-at-3.52.19-pm.png)
+![](../../.gitbook/assets/screen-shot-2018-03-08-at-7.27.15-pm.png)
 
 
 
