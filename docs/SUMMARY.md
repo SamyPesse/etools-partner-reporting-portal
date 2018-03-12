@@ -40,7 +40,8 @@
 * [Development Setup](technical-documentation/development-setup.md)
 * [Deployment / DevOps](technical-documentation/deployment-devops.md)
 * [Data Model](technical-documentation/data-model.md)
-* [API Documentation](technical-documentation/api-documentation.md)
+* [API Documentation](technical-documentation/api-documentation/README.md)
+  * [Error Handling](technical-documentation/api-documentation/error-handling.md)
 * [CartoDB location sync](technical-documentation/cartodb-location-sync.md)
 * [AD Integration](technical-documentation/ad-integration.md)
 
