@@ -16,7 +16,7 @@ If the response plan the IMO would like to work on, is not there, they can add a
 
 \(**TBD Maciej: After selecting a response plan, we may need to allow IMO to select/edit the clusters because the names incoming from OCHA are not standard\)**
 
-![IMO can see details from OCHA before selecting the response plan](../../.gitbook/assets/screen-shot-2018-02-14-at-12.11.43-pm.png)
+![](../../.gitbook/assets/screen-shot-2018-03-12-at-11.14.30-am.png)
 
 For Custom Response Plans, IMO can fill out Response Plan name, plan type, start date, end date, and select cluster\(s\) involved. They can select many or at least one for this response plan. 
 
