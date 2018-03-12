@@ -33,12 +33,12 @@ Custom Project will need to have
 * Start Date/End Date
 * Status \(dropdown\)
 * Description
-* &lt;**TBD design need to add:** _**Add Additional Information Field&gt;**_
+* Additional Information Field \( ability to add more\)
 * And options for see more
 
-**&lt; TBD update image to include add additional field information&gt;**
 
-![](../../.gitbook/assets/screen-shot-2018-02-14-at-2.15.42-pm.png)
+
+![](../../.gitbook/assets/screen-shot-2018-03-12-at-4.35.28-pm.png)
 
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-2.21.38-pm.png)
 
