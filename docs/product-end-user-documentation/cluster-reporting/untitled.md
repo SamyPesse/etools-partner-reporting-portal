@@ -20,8 +20,6 @@ If the response plan the IMO would like to work on, is not there, they can add a
 
 For Custom Response Plans, IMO can fill out Response Plan name, plan type, start date, end date, and select cluster\(s\) involved. They can select many or at least one for this response plan. 
 
-&lt;**TDB get confirmation from Maciej on this&gt;**
-
 ![](../../.gitbook/assets/screen-shot-2018-02-14-at-12.12.50-pm.png)
 
 
